@@ -361,8 +361,8 @@ caption {
 }
 
 .cov_flag {
-	height:30px;
-	width:50px;
+	height:0px;
+	width:0px;
 }
 
 .cov_co_name {
