@@ -145,13 +145,13 @@
   		 
 				
                <script>
-				function copyToClipboard('#p1') {
+				function copyToClipboard('element') {
        var $temp = $("<input>");
        $("body").append($temp);
        $temp.val($(element).text()).select();
        document.execCommand("copy");
        $temp.remove();
-       alert("Bitcoin address Copied. Thank you <3");
+       alert("Copied Successfully. Thank you <3");
        }
 				</script>
                 </div>
@@ -183,13 +183,13 @@
   		 
 				
                <script>
-				function copyToClipboard('#p2') {
+				function copyToClipboard(element) {
        var $temp = $("<input>");
        $("body").append($temp);
        $temp.val($(element).text()).select();
        document.execCommand("copy");
        $temp.remove();
-       alert("Bkash Phone Number Copied. Thank you <3");
+       alert("Copied Successfully. Thank you <3");
        }
 				</script>
 				 </div>
