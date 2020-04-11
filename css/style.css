@@ -327,12 +327,14 @@ h6, .h6 {
   font-size: 1rem; }
 
 #recover {
-	color:#47CF02;
+	color:white;
+	font-size:15px
 	
 }
 
 #death {
-	color:#FF0000;
+	color:white;
+	font-size:15px
 	
 }
 
