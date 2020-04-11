@@ -34,11 +34,11 @@
   font-size: 1.5rem;
 }
 		
-	 #recovered strong {
+	 #recovered big {
 		 color:#47cf02;
 		 
 		  }
-		  #deaths strong{
+		  #deaths big{
 			color:red;  
 			  
 		  }
@@ -131,15 +131,15 @@ fetch('https://api.coronastatistics.live/all')
   const recovered = document.getElementById('recovered');
   
   infected.innerHTML = `
-  	<strong>${data.cases}</strong>
+  	<big>${data.cases}</big><br>
     Infected
   	`
   deaths.innerHTML = `
-  	<strong>${data.deaths}</strong>
+  	<big>${data.deaths}</big><br>
     Deaths
   	`
   recovered.innerHTML = `
-  	<strong>${data.recovered}</strong>
+  	<big>${data.recovered}</big><br>
     Recovered
   	`
 
