@@ -132,15 +132,15 @@ fetch('https://api.coronastatistics.live/all')
   
   infected.innerHTML = `
   	<big>${data.cases}</big><br>
-    Infected
+    <span style="font-size:14pxcolor:#FFE6E6 ;">Total Corona Cases</span>
   	`
   deaths.innerHTML = `
   	<big>${data.deaths}</big><br>
-    Deaths
+    <span style="font-size:14pxcolor:#FF8F8F  ;">Total Deaths</span>
   	`
   recovered.innerHTML = `
   	<big>${data.recovered}</big><br>
-    Recovered
+    <span style="font-size:14pxcolor:#C2FBBA ;">Total Recovered</span>
   	`
 
   console.log(data);
