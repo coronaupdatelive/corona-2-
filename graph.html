@@ -45,7 +45,7 @@
                 list.push([
                     item.title,
                     item.total_cases,
-                    <span style="color:red;">item.total_deaths</span>,
+                    item.total_deaths,
                     item.total_recovered,
                     item.total_active_cases
                 ]);
@@ -60,8 +60,8 @@
                 columns: [
                     { title: "Country or Region" },
                     { title: "Cases" },
-                    { title: "Deaths" },
-                    { title: "Recoveries" },
+                    { title: "<span style="color:red;">Deaths</span>" },
+                    { title: "<span style="color:#2ECF17;">Recoveries</span>" },
                     { title: "Active" }
                 ],
                 order: [[ 1, "desc" ]]
