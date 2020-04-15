@@ -95,6 +95,12 @@
 			color:red;  
 			  
 		  }
+		  <style>
+    iframe{
+        width: 100%;
+        border: 2px solid #ccc;
+    }
+</style>
 	  </style>
    <!-- Google Adsense Apply -->	  
    <script data-ad-client="ca-pub-8612201318600918" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
@@ -220,8 +226,18 @@ fetch('https://api.coronastatistics.live/all')
 	    
 		
 		
-	<iframe src="country-graph.html" style="height:610px;width:100%;border:none;"></iframe> 
-		
+	
+		<iframe src="rapidapi.html" id="myIframe"></iframe>
+    
+    <script>
+    // Selecting the iframe element
+    var iframe = document.getElementById("myIframe");
+    
+    // Adjusting the iframe height onload event
+    iframe.onload = function(){
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    </script>
 		
       </div>
     </section>
