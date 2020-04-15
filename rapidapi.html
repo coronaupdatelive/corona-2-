@@ -1,0 +1,117 @@
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+
+
+<style>
+body {
+	  background-color:#F8FAFF;
+	}
+table {
+  font-family: Lato, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.hero {
+  width: 200px;
+  padding: 8px 8px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  float:right;
+}
+</style>
+</head>
+<body>
+<br><center>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search Country..." class="hero"></center><br>
+<script>
+   function search() {
+  var input, filter, table, tr, td, i, txtValue;
+       
+  input = document.getElementById("myInput");
+       
+  filter = input.value.toUpperCase();
+       
+  table = document.getElementById("myTable");
+       
+  tr = table.getElementsByTagName("tr");
+       
+  for (i = 0; i < tr.length; i++) {
+      
+    td = tr[i].getElementsByTagName("td")[0];
+      
+    if (td) {
+        
+      txtValue = td.textContent || td.innerText;
+        
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } 
+       else 
+      {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+    </script>
+
+ <table id="myTable">
+  <thead>
+    <tr>
+      <th>Country</th>
+	  <th>New Cases</th>
+      <th>Total Cases</th>
+	  <th>New Deaths</th>
+      <th>Total Deaths</th>
+      <th>Total Recovered</th>
+      </tr>
+   </thead>
+  <tbody id="tbody"></tbody>
+ </table>
+ <script>
+ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "b2b5e80308msh762ba0474d05243p14df99jsn60bf9fa313b0"
+	}
+})
+.then(res => res.json())
+.then(data => {
+console.log(data);
+	const tbody = document.getElementById('tbody');
+  data.countries_stat.forEach((country, index) => {
+  	if(country.country_name && country.cases && country.deaths && country.total_recovered && country.serious_critical && country.active_cases) {
+    tbody.innerHTML += `
+  	<tr>
+      
+    	 <td>${country.country_name}</td>
+	  <td>${country.new_cases}</td>
+      <td>${country.cases}</td>
+	  <td>${country.new_deaths}</td>
+      <td>${country.deaths}</td>
+	  <td>${country.total_recovered}</td>
+      
+    </tr>
+  `
+    }
+  	
+  })
+})
+.catch(err => {
+	console.log(err);
+});
+ </script>
+ </body>
+ </html>
