@@ -99,11 +99,7 @@
    
 </style>
 	  </style>
-	<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
+	
    <!-- Google Adsense Apply -->	  
    <script data-ad-client="ca-pub-8612201318600918" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
   <!-- End Google Adsense Apply -->
@@ -230,7 +226,11 @@ fetch('https://api.coronastatistics.live/all')
 		
 	
 		<iframe src="rapidapi.html" frameborder="0" scrolling="no" onload="resizeIframe(this)" />
-    
+    <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
     
 		
       </div>
