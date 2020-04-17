@@ -93,7 +93,7 @@
 		  }
 		  #deaths big{
 			color:red;   }
-		.hero {
+		.searchbox {
   width: 250px;
   padding: 8px 8px;
   margin: 4px 0;
@@ -102,6 +102,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   float:right;
+  height:30px;
 		  }
 			
 			table { 
@@ -305,7 +306,7 @@ fetch('https://api.coronastatistics.live/all')
 		
 		
 	<center>
-<input type="text" id="myInput" onkeyup="search()" placeholder="Search Country..." class="hero"></center><br><br>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search Country..." class="searchbox"></center><br><br>
 <script>
    function search() {
   var input, filter, table, tr, td, i, txtValue;
