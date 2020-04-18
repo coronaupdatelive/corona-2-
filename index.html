@@ -332,7 +332,7 @@ fetch('https://api.coronastatistics.live/all')
 		
 		
 	<center>
-<input type="text" id="myInput" onkeyup="search()" placeholder="Search Country..." class="hero"></center><br>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search Country..." class="searchbox"></center><br>
 <script>
    function search() {
   var input, filter, table, tr, td, i, txtValue;
@@ -374,6 +374,7 @@ fetch('https://api.coronastatistics.live/all')
 	  <th>New Deaths</th>
       <th>Total Deaths</th>
       <th>Total Recovered</th>
+	    <th>Active Cases</th>
       </tr>
    </thead>
   <tbody id="tbody"></tbody>
@@ -391,7 +392,7 @@ fetch('https://api.coronastatistics.live/all')
 console.log(data);
 	const tbody = document.getElementById('tbody');
   data.countries_stat.forEach((country, index) => {
-  	if(country.country_name && country.cases && country.deaths && country.total_recovered && country.serious_critical && country.active_cases) {
+  	if(country.country_name && country.cases && country.deaths && country.total_recovered  && country.active_cases) {
     tbody.innerHTML += `
   	<tr>
       
@@ -401,6 +402,7 @@ console.log(data);
 	  <td>${country.new_deaths}</td>
       <td>${country.deaths}</td>
 	  <td>${country.total_recovered}</td>
+        <td>${country.active_cases}</td>
       
     </tr>
   `
