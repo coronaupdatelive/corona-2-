@@ -285,12 +285,12 @@ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
   .then(response => response.json())
   .then(data => {
   
-  const infected = document.getElementById('total_cases');
+  const infected = document.getElementById('infected');
   const deaths = document.getElementById('deaths');
   const recovered = document.getElementById('recovered');
   
   infected.innerHTML = `
-  	<big>${data.cases}</big><br>
+  	<big>${data.total_cases}</big><br>
     <span style="font-size:14pxcolor:#FFE6E6 ;">Total Confirmed</span>
   	`
   deaths.innerHTML = `
