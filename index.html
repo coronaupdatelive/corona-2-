@@ -275,11 +275,17 @@ only screen and (max-width: 768px),
 		      
                 
 		      <script>
-fetch('https://coronavirus-19-api.herokuapp.com')
+fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "a81a0aba1bmsh11199cbb7795010p1ec75bjsn584d316157be"
+	}
+})
   .then(response => response.json())
   .then(data => {
   
-  const infected = document.getElementById('infected');
+  const infected = document.getElementById('total_cases');
   const deaths = document.getElementById('deaths');
   const recovered = document.getElementById('recovered');
   
