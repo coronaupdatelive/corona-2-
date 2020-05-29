@@ -371,7 +371,7 @@ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
 	  <th>New Deaths</th>
       <th>Total Deaths</th>
       <th>Total Recovered</th>
-	    <th>Active Cases</th>
+	    <th>Srious Critical</th>
       </tr>
    </thead>
   <tbody id="tbody"></tbody>
@@ -399,7 +399,7 @@ console.log(data);
 	 <td>${country.new_deaths}</td>
          <td><span style="color:red;">${country.deaths}</span></td>
 	 <td><span style="color:#11B200;">${country.total_recovered}</span></td>
-         <td>${country.active_cases}</td>
+         <td>${country.serious_critical}</td>
       
     </tr>
   `
